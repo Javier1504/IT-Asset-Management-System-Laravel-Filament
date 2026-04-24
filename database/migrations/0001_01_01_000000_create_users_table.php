@@ -15,18 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('employee_id')->nullable()->unique();
-            $table->string('phone')->nullable();
-            $table->string('department')->nullable();
-            $table->string('position')->nullable();
-            $table->boolean('is_active')->default(true);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-
-            $table->index(['is_active']);
-            $table->index(['department']);
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -50,8 +42,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sessions');
-        Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('users');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('sessions');
     }
 };
