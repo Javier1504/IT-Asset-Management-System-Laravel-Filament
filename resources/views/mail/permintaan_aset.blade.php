@@ -1,0 +1,1 @@
+<p>Permintaan aset dari {{$nama}}</p>

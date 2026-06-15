@@ -1,0 +1,4 @@
+# Ignore semua file di folder ini
+*
+# Kecuali file .gitignore ini sendiri
+!.gitignore
